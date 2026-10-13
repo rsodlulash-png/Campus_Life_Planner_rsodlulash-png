@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View your academic progress and upcoming Wits planner activities.">
+    <title>Dashboard | Wits Campus Planner</title>
+    <link rel="stylesheet" href="../style.css">
+    <script type="module" src="../scripts/main.js"></script>
+</head>
+<body data-page="dashboard">
+    <header class="site-header">
+        <a href="../index.html" class="site-brand">
+            <img
+  src="https://mighealth-au-eu.org/wp-content/uploads/2023/10/wits-logo-transparent-background-14.png"
+  alt="Wits wits-logo-transparent-background-14"
+  width="100"
+  height="100"
+  >
+        </a>
+        <nav aria-label="Main navigation" class="main-nav">
+            <a href="../index.html">Home</a>
+            <a href="dashboard.html" aria-current="page">Dashboard</a>
+            <a href="tasks.html">Tasks</a>
+            <a href="timetable.html">Events</a>
+            <a href="resources.html">Resources</a>
+            <a href="settings.html">Settings</a>
+        </nav>
+    </header>
+
+    <main class="page-main">
+        <section class="page-heading">
+            <p class="eyebrow">YOUR PROGRESS, AT A GLANCE</p>
+            <h1>Student Dashboard</h1>
+            <p>See how you are managing your time and working towards your academic goals.</p>
+        </section>
+
+        <section class="planner-panel" aria-labelledby="progress-heading">
+            <h2 id="progress-heading">Your progress</h2>
+
+            <div class="planner-grid">
+                <article class="planner-card">
+                    <h3>Total tasks</h3>
+                    <p class="stat-number" id="dashboard-total-tasks">0</p>
+                </article>
+
+                <article class="planner-card">
+                    <h3>Completed tasks</h3>
+                    <p class="stat-number" id="dashboard-completed-tasks">0</p>
+                </article>
+
+                <article class="planner-card">
+                    <h3>Pending tasks</h3>
+                    <p class="stat-number" id="dashboard-pending-tasks">0</p>
+                </article>
+
+                <article class="planner-card">
+                    <h3>Upcoming events</h3>
+                    <p class="stat-number" id="dashboard-upcoming-events">0</p>
+                </article>
+            </div>
+
+            <h3>Task completion</h3>
+            <progress id="dashboard-progress" value="0" max="100">0%</progress>
+            <p id="dashboard-progress-label" aria-live="polite">0% of tasks completed</p>
+        </section>
+
+        <section class="planner-panel" aria-labelledby="workload-heading">
+            <h2 id="workload-heading">Estimated workload</h2>
+            <p>Total time estimated for your pending tasks:</p>
+            <p class="stat-number" id="dashboard-task-duration">0 minutes</p>
+
+            <h3>Upcoming deadlines</h3>
+            <div id="dashboard-deadlines" class="planner-list">
+                <p>Your upcoming deadlines will appear here.</p>
+            </div>
+        </section>
+
+        <section class="planner-panel" aria-labelledby="dashboard-actions-heading">
+            <h2 id="dashboard-actions-heading">Quick actions</h2>
+            <div class="planner-grid">
+                <article class="planner-card">
+                    <h3>Plan your work</h3>
+                    <p>Add assignments, due dates, durations and tags.</p>
+                    <a class="button button-blue" href="tasks.html">Manage tasks</a>
+                </article>
+
+                <article class="planner-card">
+                    <h3>Plan your time</h3>
+                    <p>Record lectures, meetings and campus activities.</p>
+                    <a class="button button-blue" href="timetable.html">Manage events</a>
+                </article>
+
+                <article class="planner-card">
+                    <h3>Find support</h3>
+                    <p>Explore useful academic and student resources.</p>
+                    <a class="button button-blue" href="resources.html">View resources</a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Wits Campus Life Planner.</p>
+        <p>Pause,This is Not an official University of the Witwatersrand website.</p>
+    </footer>
+</body>
+</html>

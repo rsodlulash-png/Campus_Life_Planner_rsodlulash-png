@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Customize your Wits Campus Life Smart Planner preferences and tags.">
+    <title>Settings | Wits Campus Planner</title>
+    <link rel="stylesheet" href="../style.css">
+    <script type="module" src="../scripts/main.js"></script>
+</head>
+<body data-page="settings">
+    <header class="site-header">
+        <a href="../index.html" class="site-brand">
+            <img
+  src="https://mighealth-au-eu.org/wp-content/uploads/2023/10/wits-logo-transparent-background-14.png"
+  alt="Wits wits-logo-transparent-background-14"
+  width="100"
+  height="100"
+  >
+        </a>
+        <nav aria-label="Main navigation" class="main-nav">
+            <a href="../index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="tasks.html">Tasks</a>
+            <a href="timetable.html">Events</a>
+            <a href="resources.html">Resources</a>
+            <a href="settings.html" aria-current="page">Settings</a>
+        </nav>
+    </header>
+
+    <main class="page-main">
+        <section class="page-heading">
+            <p class="eyebrow">MAKE IT YOURS</p>
+            <h1>Planner Settings</h1>
+            <p>Customize your study preferences and organize your planner with useful tags.</p>
+        </section>
+
+        <section class="planner-panel" aria-labelledby="preferences-heading">
+            <h2 id="preferences-heading">Study preferences</h2>
+
+            <form id="settings-form" class="planner-form">
+                <label for="study-duration">Default study session (minutes)</label>
+                <input id="study-duration" name="studyDuration" type="number"
+                       min="5" max="240" step="5" value="45" required>
+
+                <label for="break-duration">Preferred break (minutes)</label>
+                <input id="break-duration" name="breakDuration" type="number"
+                       min="1" max="60" value="10" required>
+
+                <button class="button button-blue" type="submit">Save preferences</button>
+                <p id="settings-message" class="status-message" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+
+        <section class="planner-panel" aria-labelledby="tags-heading">
+            <h2 id="tags-heading">Manage your tags</h2>
+            <p>Examples include revision, urgent, group work, coursework and personal.</p>
+
+            <form id="tag-form" class="planner-form">
+                <label for="new-tag">New tag</label>
+                <input id="new-tag" name="tag" type="text"
+                       placeholder="e.g. exam revision" maxlength="40" required>
+                <button class="button button-blue" type="submit">Add tag</button>
+                <p id="tag-message" class="status-message" role="status" aria-live="polite"></p>
+            </form>
+
+            <h3>Your saved tags</h3>
+            <ul id="saved-tags" class="tag-list">
+                <li>Loading tags...</li>
+            </ul>
+        </section>
+
+        <section class="planner-panel" aria-labelledby="data-heading">
+            <h2 id="data-heading">Your planner data</h2>
+            <p>Your tasks, events, settings and tags are saved in this browser on this device.</p>
+            <p>Clearing browser data or switching devices may remove or hide your saved planner items.</p>
+            <button id="export-planner" class="button button-blue" type="button">
+                Export planner data
+            </button>
+            <p id="export-message" class="status-message" role="status" aria-live="polite"></p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Wits Campus Life Planner.</p>
+        <p>Pause, This is Not an official University of the Witwatersrand website.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Plan Wits lectures, campus events and study sessions.">
+    <title>Events & Timetable | Wits Campus Planner</title>
+    <link rel="stylesheet" href="../style.css">
+    <script type="module" src="../scripts/main.js"></script>
+</head>
+<body data-page="events">
+    <header class="site-header">
+        <a href="../index.html" class="site-brand">
+            <img
+  src="https://mighealth-au-eu.org/wp-content/uploads/2023/10/wits-logo-transparent-background-14.png"
+  alt="Wits wits-logo-transparent-background-14"
+  width="100"
+  height="100"
+  >
+        <nav aria-label="Main navigation" class="main-nav">
+            <a href="../index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="tasks.html">Tasks</a>
+            <a href="timetable.html" aria-current="page">Events</a>
+            <a href="resources.html">Resources</a>
+            <a href="settings.html">Settings</a>
+        </nav>
+    </header>
+
+    <main class="page-main">
+        <section class="page-heading">
+            <p class="eyebrow">MAKE TIME FOR WHAT MATTERS</p>
+            <h1>Events & Timetable</h1>
+            <p>Keep lectures, deadlines, meetings and campus activities in one place.</p>
+        </section>
+
+        <section class="planner-panel" aria-labelledby="add-event-heading">
+            <h2 id="add-event-heading">Add an event</h2>
+
+            <form id="event-form" class="planner-form">
+                <label for="event-title">Event title</label>
+                <input id="event-title" name="title" type="text"
+                       placeholder="e.g. Computer Science lecture" maxlength="120" required>
+
+                <label for="event-description">Description or location</label>
+                <textarea id="event-description" name="description" rows="3"
+                          placeholder="e.g. Lab session, location or meeting details"></textarea>
+
+                <label for="event-date">Event date</label>
+                <input id="event-date" name="date" type="date" required>
+
+                <label for="event-time">Start time</label>
+                <input id="event-time" name="time" type="time" required>
+
+                <label for="event-duration">Duration (minutes)</label>
+                <input id="event-duration" name="duration" type="number"
+                       min="1" max="1440" placeholder="e.g. 60" required>
+
+                <label for="event-category">Category</label>
+                <select id="event-category" name="category" required>
+                    <option value="Lecture">Lecture</option>
+                    <option value="Study">Study session</option>
+                    <option value="Campus Event">Campus event</option>
+                    <option value="Meeting">Meeting</option>
+                    <option value="Personal">Personal</option>
+                </select>
+
+                <label for="event-tag">Tag</label>
+                <input id="event-tag" name="tag" type="text"
+                       placeholder="e.g. CS101, society, group work" maxlength="40" required>
+
+                <button class="button button-blue" type="submit">Save event</button>
+                <p id="event-form-message" class="status-message" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+
+        <section class="planner-panel" aria-labelledby="event-list-heading">
+            <h2 id="event-list-heading">Your upcoming events</h2>
+
+            <form id="event-search-form" class="planner-form" role="search">
+                <label for="event-search">Search events</label>
+                <input id="event-search" name="q" type="search"
+                       placeholder="Search by event, category, date or tag">
+
+                <label for="event-filter">Show</label>
+                <select id="event-filter" name="filter">
+                    <option value="all">All events</option>
+                    <option value="upcoming">Upcoming events</option>
+                    <option value="past">Past events</option>
+                </select>
+
+                <button class="button button-blue" type="submit">Search</button>
+                <button class="button" id="clear-event-search" type="button">Clear search</button>
+            </form>
+
+            <p id="event-results-count" aria-live="polite"></p>
+            <div id="event-list" class="planner-list">
+                <p>Your saved events will appear here.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Wits Campus Life Planner.</p>
+        <p>Pause, This is Not an official Wits website.</p>
+    </footer>
+</body>
+</html>

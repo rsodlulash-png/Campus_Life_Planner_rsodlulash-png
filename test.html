@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="description"
+        content="Validate Wits Campus Planner task fields and run automated assertions."
+    >
+
+    <title>Validation Lab | Wits Campus Planner</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="scripts/tests.js"></script>
+</head>
+
+<body data-page="test">
+
+    <header class="site-header">
+        <a href="index.html" class="site-brand">
+            <img
+                src="https://mighealth-au-eu.org/wp-content/uploads/2023/10/wits-logo-transparent-background-14.png"
+                alt="University of the Witwatersrand logo"
+                width="100"
+                height="100"
+                class="site-logo"
+            >
+            
+        </a>
+
+        <nav class="main-nav" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="pages/dashboard.html">Dashboard</a>
+            <a href="pages/tasks.html">Tasks</a>
+            <a href="pages/timetable.html">Events</a>
+            <a href="pages/resources.html">Resources</a>
+            <a href="pages/settings.html">Settings</a>
+        </nav>
+    </header>
+
+    <main class="page-container">
+
+        <section class="page-heading">
+            <p class="eyebrow">Developer tools</p>
+            <h1>Validation Lab</h1>
+            <p>
+                Test task inputs before saving them. This page checks titles,
+                dates, durations and tags, and runs automated assertions
+                against your validation functions.
+            </p>
+        </section>
+
+        <section class="planner-section" aria-labelledby="form-heading">
+            <h2 id="form-heading">Test a Task</h2>
+
+            <p>
+                Try valid and invalid values to see how the validation rules
+                respond.
+            </p>
+
+            <form id="validation-demo-form" class="planner-form" novalidate>
+
+                <label for="demo-title">Task title</label>
+                <input
+                    type="text"
+                    id="demo-title"
+                    name="title"
+                    placeholder="e.g. Complete Python assignment"
+                    maxlength="120"
+                    required
+                    aria-describedby="title-error"
+                >
+                <p id="title-error" class="field-error" aria-live="polite"></p>
+
+                <label for="demo-date">Due date</label>
+                <input
+                    type="text"
+                    id="demo-date"
+                    name="date"
+                    placeholder="YYYY-MM-DD"
+                    inputmode="numeric"
+                    required
+                    aria-describedby="date-error"
+                >
+                <p id="date-error" class="field-error" aria-live="polite"></p>
+
+                <label for="demo-duration">Estimated duration (minutes)</label>
+                <input
+                    type="number"
+                    id="demo-duration"
+                    name="duration"
+                    placeholder="e.g. 90"
+                    min="1"
+                    max="1440"
+                    step="1"
+                    required
+                    aria-describedby="duration-error"
+                >
+                <p
+                    id="duration-error"
+                    class="field-error"
+                    aria-live="polite"
+                ></p>
+
+                <label for="demo-tag">Tag</label>
+                <input
+                    type="text"
+                    id="demo-tag"
+                    name="tag"
+                    placeholder="e.g. Python, group-project"
+                    maxlength="40"
+                    required
+                    aria-describedby="tag-error"
+                >
+                <p id="tag-error" class="field-error" aria-live="polite"></p>
+
+                <button class="button button-blue" type="submit">
+                    Validate task
+                </button>
+
+                <button class="button" id="clear-demo" type="reset">
+                    Clear form
+                </button>
+
+                <p
+                    id="validation-output"
+                    class="status-message"
+                    role="status"
+                    aria-live="polite"
+                ></p>
+            </form>
+        </section>
+
+        <section class="planner-section" aria-labelledby="regex-heading">
+            <h2 id="regex-heading">Advanced Regex Rules</h2>
+
+            <p>
+                Regular expressions are patterns used to check whether text
+                follows a particular format. Your JavaScript validators
+                perform the actual checks.
+            </p>
+
+            <ul>
+                <li>
+                    <strong>Title:</strong>
+                    <code>^(?=.{3,120}$)[\p{L}\p{N}][\p{L}\p{N}\s.,:;!?()'’&amp;+/#_-]*$</code>
+                    <p>
+                        Requires 3–120 characters, starts with a letter or
+                        number, and allows common punctuation.
+                    </p>
+                </li>
+
+                <li>
+                    <strong>Date:</strong>
+                    <code>^\d{4}-\d{2}-\d{2}$</code>
+                    <p>
+                        Checks the YYYY-MM-DD format. JavaScript must also
+                        verify that the date exists on the calendar.
+                    </p>
+                </li>
+
+                <li>
+                    <strong>Duration:</strong>
+                    <code>^\d+$</code>
+                    <p>
+                        Accepts whole numbers only. JavaScript additionally
+                        restricts the value to 1–1440 minutes.
+                    </p>
+                </li>
+
+                <li>
+                    <strong>Tag:</strong>
+                    <code>^[\p{L}\p{N}]+(?:[ _-][\p{L}\p{N}]+)*$</code>
+                    <p>
+                        Allows letters and numbers separated by single
+                        spaces, underscores or hyphens. JavaScript also
+                        checks the length.
+                    </p>
+                </li>
+            </ul>
+
+            <p>
+                These patterns use Unicode property escapes where appropriate,
+                so titles and tags can include letters from different
+                languages. Regex alone is not enough to validate a real
+                calendar date or prevent every expensive regex pattern.
+            </p>
+        </section>
+
+        <section class="planner-section" aria-labelledby="tests-heading">
+            <h2 id="tests-heading">Automated Assertions</h2>
+
+            <p>
+                An assertion checks whether an expected result matches the
+                actual result. Run the tests to check valid inputs, invalid
+                inputs and edge cases.
+            </p>
+
+            <button
+                class="button button-blue"
+                id="run-tests"
+                type="button"
+            >
+                Run automated tests
+            </button>
+
+            <p
+                id="test-summary"
+                class="status-message"
+                role="status"
+                aria-live="polite"
+            >
+                Tests have not been run yet.
+            </p>
+
+            <ul
+                id="test-results"
+                class="planner-list"
+                aria-live="polite"
+                aria-relevant="additions text"
+            >
+                <li>Automated results will appear here.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>Wits Campus Life Smart Planner</p>
+        <p>
+            Pause,This is not an official
+            University of the Witwatersrand website.
+        </p>
+    </footer>
+
+</body>
+</html>

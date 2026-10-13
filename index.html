@@ -1,0 +1,334 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Wits Campus Life Planner helps students organise tasks, events, study durations, tags and deadlines."
+    >
+
+    <title>Home | Wits Campus Life Planner</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts/main.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <img
+  src="https://mighealth-au-eu.org/wp-content/uploads/2023/10/wits-logo-transparent-background-14.png"
+  alt="Wits wits-logo-transparent-background-14"
+  width="100"
+  height="100"
+>
+
+
+        <nav aria-label="Main navigation">
+            <ul class="nav-list">
+                <li><a href="index.html" aria-current="page">Home</a></li>
+                <li><a href="pages/dashboard.html">Dashboard</a></li>
+                <li><a href="pages/tasks.html">Tasks</a></li>
+                <li><a href="pages/timetable.html">Events &amp; Timetable</a></li>
+                <li><a href="pages/resources.html">Resources</a></li>
+                <li><a href="pages/settings.html">Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        
+        <section class="hero" aria-labelledby="welcome-title">
+            <div class="hero-content">
+                <p class="eyebrow">YOUR CAMPUS. YOUR GOALS. YOUR FUTURE.</p>
+
+                <h1 id="welcome-title">
+                    Make Your Wits Journey Count.
+                </h1>
+
+                <p class="hero-description">
+                    University life can get busy. Keep your assignments,
+                    campus events, study sessions and deadlines organised
+                    in one place so you can focus on what matters.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="pages/tasks.html" class="button button-gold">
+                        Organise My Tasks
+                    </a>
+
+                    <a href="pages/dashboard.html" class="button button-outline">
+                        View My Dashboard
+                    </a>
+                </div>
+
+                <p class="hero-note">
+                    Plan smarter. Stay organised. Conquer the Edge.
+                </p>
+            </div>
+        </section>
+
+        
+        <section class="search-section" aria-labelledby="search-title">
+            <div class="section-heading">
+                <p class="eyebrow eyebrow-blue">FIND IT QUICKLY</p>
+                <h2 id="search-title">Search Your Planner</h2>
+                <p>
+                    Look for tasks, events, assignments or categories
+                    by using a title, description or tag.
+                </p>
+            </div>
+
+            <form
+                class="planner-search"
+                action="pages/tasks.html"
+                method="get"
+                role="search"
+            >
+                <label for="planner-search-input">
+                    What are you looking for?
+                </label>
+
+                <div class="search-controls">
+                    <input
+                        type="search"
+                        id="planner-search-input"
+                        name="q"
+                        placeholder="Try: assignment, exam, study..."
+                        autocomplete="off"
+                    >
+
+                    <button type="submit" class="button button-blue">
+                        Search
+                    </button>
+                </div>
+
+                <p class="form-help">
+                    Your Tasks page needs JavaScript to read the search
+                    term and filter saved planner items.
+                </p>
+            </form>
+        </section>
+
+        <!-- Overview section -->
+        <section class="overview-section" aria-labelledby="overview-title">
+            <div class="section-heading">
+                <p class="eyebrow eyebrow-blue">YOUR STUDENT TOOLKIT</p>
+                <h2 id="overview-title">Your Campus Life at a Glance</h2>
+                <p>
+                    Use these tools to balance your academics,
+                    commitments and campus experience.
+                </p>
+            </div>
+
+            <div class="overview-grid">
+                <article class="overview-card">
+                    <span class="card-number" aria-hidden="true">01</span>
+                    <h3>Tasks &amp; Assignments</h3>
+                    <p>
+                        Record coursework, projects, personal goals
+                        and deadlines. Keep track of what is completed
+                        and what still needs attention.
+                    </p>
+                    <a href="pages/tasks.html" class="card-link">
+                        Manage my tasks
+                        <span aria-hidden="true">&rarr;</span>
+                    </a>
+                </article>
+
+                <article class="overview-card">
+                    <span class="card-number" aria-hidden="true">02</span>
+                    <h3>Events &amp; Timetable</h3>
+                    <p>
+                        Organise lectures, study groups, workshops,
+                        meetings and other campus events with dates
+                        and times.
+                    </p>
+                    <a href="pages/timetable.html" class="card-link">
+                        View events and timetable
+                        <span aria-hidden="true">&rarr;</span>
+                    </a>
+                </article>
+
+                <article class="overview-card">
+                    <span class="card-number" aria-hidden="true">03</span>
+                    <h3>Durations &amp; Time</h3>
+                    <p>
+                        Record how long a task or event will take.
+                        Use minutes or hours to plan realistic
+                        study sessions.
+                    </p>
+                    <a href="pages/tasks.html" class="card-link">
+                        Plan my time
+                        <span aria-hidden="true">&rarr;</span>
+                    </a>
+                </article>
+
+                <article class="overview-card">
+                    <span class="card-number" aria-hidden="true">04</span>
+                    <h3>Tags &amp; Categories</h3>
+                    <p>
+                        Group planner items using labels such as
+                        Coursework, Exams, Personal, Study and
+                        Campus Events.
+                    </p>
+
+                    <ul class="tag-list" aria-label="Example planner tags">
+                        <li><span class="tag tag-blue">Coursework</span></li>
+                        <li><span class="tag tag-gold">Exams</span></li>
+                        <li><span class="tag tag-green">Personal</span></li>
+                    </ul>
+
+                    <a href="pages/tasks.html" class="card-link">
+                        Organise my planner
+                        <span aria-hidden="true">&rarr;</span>
+                    </a>
+                </article>
+
+                <article class="overview-card">
+                    <span class="card-number" aria-hidden="true">05</span>
+                    <h3>Progress Dashboard</h3>
+                    <p>
+                        Review your workload and completed tasks
+                        to understand how you are progressing
+                        towards your goals.
+                    </p>
+                    <a href="pages/dashboard.html" class="card-link">
+                        Check my progress
+                        <span aria-hidden="true">&rarr;</span>
+                    </a>
+                </article>
+
+                <article class="overview-card">
+                    <span class="card-number" aria-hidden="true">06</span>
+                    <h3>Student Resources</h3>
+                    <p>
+                        Find useful student links and resources
+                        that can help you navigate your university
+                        experience.
+                    </p>
+                    <a href="pages/resources.html" class="card-link">
+                        Explore resources
+                        <span aria-hidden="true">&rarr;</span>
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <!-- How the planner works -->
+        <section class="how-it-works" aria-labelledby="how-title">
+            <div class="section-heading">
+                <p class="eyebrow eyebrow-blue">START SIMPLE</p>
+                <h2 id="how-title">Your Plan, Three Steps</h2>
+            </div>
+
+            <ol class="steps-list">
+                <li>
+                    <span class="step-number">1</span>
+                    <div>
+                        <h3>Add your tasks and events</h3>
+                        <p>
+                            Enter a title, date, duration and useful tags.
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <span class="step-number">2</span>
+                    <div>
+                        <h3>Search and organise</h3>
+                        <p>
+                            Find items by their names, descriptions
+                            or categories.
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <span class="step-number">3</span>
+                    <div>
+                        <h3>Review your progress</h3>
+                        <p>
+                            Check your dashboard and adjust your plan
+                            as your week changes.
+                        </p>
+                    </div>
+                </li>
+            </ol>
+
+            <div class="center-action">
+                <a href="pages/tasks.html" class="button button-blue">
+                    Get Started
+                </a>
+            </div>
+        </section>
+
+        <!-- Motivation section -->
+        <section class="motivation-section" aria-labelledby="motivation-title">
+            <p class="eyebrow">CONQUER THE EDGE</p>
+
+            <h2 id="motivation-title">
+                Build habits that support your future.
+            </h2>
+
+            <p>
+                Your university journey is about more than deadlines.
+                Make space for learning, friendships, rest and the
+                opportunities that help you grow.
+            </p>
+
+            <a href="pages/dashboard.html" class="button button-gold">
+                Plan My Next Step
+            </a>
+        </section>
+    </main>
+    
+<!-- Developer information -->
+<section class="developer-section" aria-labelledby="developer-title">
+    <div class="developer-content">
+        <p class="eyebrow eyebrow-blue">ABOUT THE DEVELOPER</p>
+
+        <h2 id="developer-title">Let's Connect</h2>
+
+        <p>
+            Have feedback, questions or ideas for improving the
+            Wits Campus Life Planner? Get in touch with the Me.
+        </p>
+
+        <address class="developer-details">
+            <p>
+                <strong>Email:</strong>
+                <a href="r.sodlulash@alustudent.com">
+                    r.sodlulash@alustudent.com
+                </a>
+            </p>
+
+            <p>
+                <strong>GitHub:</strong>
+                <a
+                    href="https://github.com/rsodlulash-png"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    View my GitHub profile
+                    <span class="visually-hidden"></span>
+                </a>
+            </p>
+        </address>
+    </div>
+</section>
+
+
+    <footer class="site-footer">
+        <p>
+            &copy; 2026 Wits Campus Life Planner.
+        </p>
+        <p>
+            Pause, This is Not an official
+            University of the Witwatersrand website.
+        </p>
+    </footer>
+</body>
+</html>
