@@ -1,102 +1,175 @@
 [
-  {
-    "id": "seed_0001",
-    "title": "Finish HTML assignment",
-    "dueDate": "2026-10-12",
-    "duration": 90,
-    "tag": "Academics",
-    "type": "Task",
-    "createdAt": "2026-10-10T08:00:00.000Z",
-    "updatedAt": "2026-10-10T08:00:00.000Z"
-  },
-  {
-    "id": "seed_0002",
-    "title": "Study for study group",
-    "dueDate": "2026-10-13",
-    "duration": 120,
-    "tag": "Academics",
-    "type": "Task",
-    "createdAt": "2026-10-10T09:00:00.000Z",
-    "updatedAt": "2026-10-10T09:00:00.000Z"
-  },
-  {
-    "id": "seed_0003",
-    "title": "Visit the library",
-    "dueDate": "2026-10-14",
-    "duration": 45,
-    "tag": "Campus",
-    "type": "Task",
-    "createdAt": "2026-10-09T10:00:00.000Z",
-    "updatedAt": "2026-10-09T10:00:00.000Z"
-  },
-  {
-    "id": "seed_0004",
-    "title": "Attend society meeting",
-    "dueDate": "2026-10-16",
-    "duration": 60,
-    "tag": "Social",
-    "type": "Event",
-    "createdAt": "2026-10-08T12:00:00.000Z",
-    "updatedAt": "2026-10-08T12:00:00.000Z"
-  },
-  {
-    "id": "seed_0005",
-    "title": "Prepare presentation",
-    "dueDate": "2026-10-18",
-    "duration": 180,
-    "tag": "Academics",
-    "type": "Task",
-    "createdAt": "2026-10-07T13:00:00.000Z",
-    "updatedAt": "2026-10-07T13:00:00.000Z"
-  },
-  {
-    "id": "seed_0006",
-    "title": "Take a wellbeing break",
-    "dueDate": "2026-10-11",
-    "duration": 30,
-    "tag": "Wellbeing",
-    "type": "Task",
-    "createdAt": "2026-10-10T10:30:00.000Z",
-    "updatedAt": "2026-10-10T10:30:00.000Z"
-  },
-  {
-    "id": "seed_0007",
-    "title": "Campus volunteering day",
-    "dueDate": "2026-10-24",
-    "duration": 240,
-    "tag": "Campus",
-    "type": "Event",
-    "createdAt": "2026-10-06T14:00:00.000Z",
-    "updatedAt": "2026-10-06T14:00:00.000Z"
-  },
-  {
-    "id": "seed_0008",
-    "title": "Plan groceries",
-    "dueDate": "2026-10-20",
-    "duration": 25,
-    "tag": "Personal",
-    "type": "Task",
-    "createdAt": "2026-10-05T15:00:00.000Z",
-    "updatedAt": "2026-10-05T15:00:00.000Z"
-  },
-  {
-    "id": "seed_0009",
-    "title": "Review CSS notes",
-    "dueDate": "2026-10-15",
-    "duration": 75.5,
-    "tag": "Academics",
-    "type": "Task",
-    "createdAt": "2026-10-10T16:00:00.000Z",
-    "updatedAt": "2026-10-10T16:00:00.000Z"
-  },
-  {
-    "id": "seed_0010",
-    "title": "Join a campus conversation",
-    "dueDate": "2026-11-01",
-    "duration": 50,
-    "tag": "Social",
-    "type": "Event",
-    "createdAt": "2026-10-03T17:00:00.000Z",
-    "updatedAt": "2026-10-03T17:00:00.000Z"
-  }
+    {
+        "id": "seed_0001",
+        "title": "Finish HTML Assignment",
+        "dueDate": "2026-10-12",
+        "duration": 90,
+        "tag": "Academics",
+        "type": "Task",
+        "createdAt": "2026-10-10T08:00:00.000Z",
+        "updatedAt": "2026-10-10T08:00:00.000Z"
+
+    },
+    {
+        "id": "seed_0002",
+        "title": "Study for study group",
+        "dueDate": "2026-10-13",
+        "duration": 120,
+        "tag": "Academics",
+        "type": "Task",
+        "createdAt": "2026-10-10T09:00:00.000Z",
+        "updatedAt": "2026-10-10T09:00:00.000Z"
+    },
+    {
+        "id": "seed_0003",
+        "title": "Visit the Library",
+        "dueDate": "2026-10-14",
+        "duration": 45,
+        "tag": "Campus",
+        "type": "Task",
+        "createdAt": "2026-10-09T10:00:00.000Z",
+        "updatedAt": "2026-10-09T10:00:00.000Z"
+    },
+    {
+        "id": "seed_0004",
+        "title": "Attend A club Meeting",
+        "dueDate": "2026-10-16",
+        "duration": 60,
+        "tag": "Social",
+        "type": "Event",
+        "createdAt": "2026-10-08T12:00:00.000Z",
+        "updated": "2026-10-08T12:00;00.000Z"
+    },
+    {
+        "id":"seed_0005",
+        "title": "Prepare Presntation",
+        "dueDate": "2026-10-18",
+        "duration": 180,
+        "tag": "Academics",
+        "type": "Task",
+        "createdAt": "2026-10-07T13:00:00.000Z",
+        "updatedAt": "2026-10-07T13:00:00.000Z"
+    },
+    {
+        "id": "seed_0006",
+        "title": "Take a wellbeing break",
+        "dueDate": "2026-10-11",
+        "duration": 30,
+        "tag": "Wellbeing",
+        "type": "Task",
+        "createdAt": "2026-10-10T10:30:00.000Z",
+        "updatedAt": "2026-10-10T10:30:00.000Z"
+    },
+    {
+        "id": "seed_0007",
+        "title": "Campus volunteering day",
+        "dueDate": "2026-10-24",
+        "duration": 240,
+        "tag": "Campus",
+        "type": "Event",
+        "createdAt": "2026-10-06T14:00;00.000Z",
+        "updatedAt": "2026-10-06T14:00:00.000Z"
+
+    },
+    {
+        "id": "seed_0008",
+        "title": "Plan groceries",
+        "dueDate": "2026-10-20",
+        "duration": 25,
+        "tag": "Personal",
+        "type": "Task",
+        "createdAt": "2026-10-05T15:00:00.000Z",
+        "updatedAt": "2026-10-05T15:00:00.000Z"
+    },
+    {
+        "id": "seed_0009",
+        "title": "Review CSS notes",
+        "dueDate": "2026-10-15",
+        "duration": 75.5,
+        "tag": "Academics",
+        "type": "Task",
+        "createdAt": "2026-10-10T16:00:00.000Z",
+        "updatedAt": "2026-10-10T16:00:00.000Z"
+    },
+    {
+        "id": "seed_0010",
+        "title": "Join a campus conversation",
+        "dueDate": "2026-11-01",
+        "duration": 50,
+        "tag": "Social",
+        "type": "Event",
+        "createdAt": "2026-10-03T17:00:00.000Z",
+        "updatedAt": "2026-10-03T17:00:00.000Z"
+
+    },
+    {
+        "id": "seed_0011",
+        "title": "Attending a morning lecture",
+        "dueDate": "2026-11-03",
+        "duration": 60,
+        "tag": "Academics",
+        "type": "Task",
+        "createdAt": "2026-10-14T08:00:00.000Z",
+        "updatedAt": "2026-10-14T08:00:00.000Z"
+    },
+    {
+        "id": "seed_0012",
+        "title": "Meet up with teammates",
+        "dueDate": "2026-11-04",
+        "duration": 90,
+        "tag": "Group Work",
+        "type": "Event",
+        "createdAt": "2026-10-14T09:00:00.000Z",
+        "updatedAt": "2026-10-14T09:00:00.000Z"
+    },
+    {
+        "id": "seed_0013",
+        "title": "Complete JS practice",
+        "dueDate": "2026-11-05",
+        "duration": 120,
+        "tag": "Academics",
+        "type": "Task",
+        "createdAt": "2026-10-14T10:00:00.000Z",
+        "updatedAt": "2026-10-14T10:00:00.000Z"
+    },
+    {
+        "id": "seed_0014",
+        "title": "Attend a Campus Wellness Event",
+        "dueDate": "2026-11-06",
+        "duration": 60,
+        "tag": "Wellbeing",
+        "type": "Event",
+        "createdAt": "2026-10-14T11:00:00.000-Z",
+        "updatedAt": "2026-10-14T11:00:00.000Z"
+    },
+    {
+        "id": "seed_0015",
+        "title": "Prep for Upcoming asssesment",
+        "dueDate": "2026-11-07",
+        "duration": 150,
+        "tag": "Academics",
+        "type": "Task",
+        "createdAt": "2026-10-14T12:00:00.000Z",
+        "updatedAt": "2026-10-14T12:00:00.000Z"
+    },
+    {
+        "id": "seed_0016",
+        "title": " Ambassador meeting",
+        "dueDate": "2026-11-18",
+        "duration": 60,
+        "tag": "Campus Duty",
+        "type": "Task",
+        "createdAt": "2026-10-14T13:00:00.000Z",
+        "updatedAt": "2026-10_14T13:00:00.000z"
+    },
+    {
+        "id": "seed_0017",
+        "title": "Yoga Session",
+        "dueDate": "2026-11-19",
+        "duration": 15,
+        "tag": "Wellness",
+        "type": " Event",
+        "createdAt": "2026-10-10T19:00:00.000Z",
+        "updatedAt": "2026-10-10T19:00:00.000Z"
+    }
 ]

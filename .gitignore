@@ -1,0 +1,8 @@
+# Dependancies
+node_modules/
+#Operating Systems Files
+.DS_Store
+#Logs
+.log 
+#Editor and IDE Files
+.vscode/*
