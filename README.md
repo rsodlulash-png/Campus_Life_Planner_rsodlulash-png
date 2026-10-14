@@ -279,4 +279,7 @@ The Wits Campus Life Planner aims to make academic organisation easier for Wits 
 
 By focusing on usability, validation, accessibility, and a student-centred design, the project aims to help students manage their responsibilities and make the most of their university experience.
 
+
+**Conquer the Edge — plan with purpose, stay organised, and make every opportunity count.**
+
 **Conquer the Edge — plan with purpose, stay organised, and make every opportunity count.**
