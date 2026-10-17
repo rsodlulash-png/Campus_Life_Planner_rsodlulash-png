@@ -13,10 +13,11 @@
     <title>Home | Wits Campus Life Planner</title>
 
     <link rel="stylesheet" href="style.css">
-    <script src="scripts/main.js" defer></script>
+    <script type="module" src="scripts/main.js" defer></script>
 </head>
 
 <body>
+    <a href="#main" class="skip-link">Skip t main Content.</a>
     <header>
         <img
   src="https://mighealth-au-eu.org/wp-content/uploads/2023/10/wits-logo-transparent-background-14.png"
@@ -38,7 +39,7 @@
         </nav>
     </header>
 
-    <main>
+    <main id="main" tabindex="-1">
         
         <section class="hero" aria-labelledby="welcome-title">
             <div class="hero-content">
@@ -285,34 +286,34 @@
     </main>
     
 <!-- Developer information -->
-<section class="developer-section" aria-labelledby="developer-title">
+<section class="developer-search-section" aria-labelledby="developer-title">
     <div class="developer-content">
-        <p class="eyebrow eyebrow-blue">ABOUT THE DEVELOPER</p>
-
+        <p class="eyebrow eyebrow-blue"> About The Developer.</p>
         <h2 id="developer-title">Let's Connect</h2>
-
         <p>
-            Have feedback, questions or ideas for improving the
-            Wits Campus Life Planner? Get in touch with the Me.
+            Have feedback or questions about the 
+            Wits Campus Life Planner? Get in touch with the Developer.
         </p>
-
         <address class="developer-details">
             <p>
                 <strong>Email:</strong>
-                <a href="r.sodlulash@alustudent.com">
+                <a href="mailto:r.sodlulash@alustudent.com">
                     r.sodlulash@alustudent.com
                 </a>
             </p>
 
             <p>
+
                 <strong>GitHub:</strong>
-                <a
+                <a 
                     href="https://github.com/rsodlulash-png"
                     target="_blank"
                     rel="noopener noreferrer"
-                >
-                    View my GitHub profile
-                    <span class="visually-hidden"></span>
+                > 
+                    
+                    View My GitHub Profile
+                    <span class="visually-hidden">(Opens in a new tab)</span>
+
                 </a>
             </p>
         </address>
@@ -322,10 +323,10 @@
 
     <footer class="site-footer">
         <p>
-            &copy; 2026 Wits Campus Life Planner.
+            &copy; 2026 Wits Campus Life PLanner.
         </p>
         <p>
-            Pause, This is Not an official
+            Pause, This is not an official
             University of the Witwatersrand website.
         </p>
     </footer>
