@@ -56,8 +56,8 @@ function refreshTasks() {
     const result = searchRecords(tasks, query);
 
     if (result.error) {
+        renderTasks([], { query: ""});
         announce(result.error, "#task-results-count");
-        renderTasks([], { query: "" });
         return;
     }
 
@@ -167,12 +167,14 @@ function handleTaskSubmit(event) {
         category: String(data.get("category") || "Study"),
         tag: String(data.get("tag")).trim()
     };
-
+    const wasEditing = Boolean(editingTaskId);
     let result;
 
     if (editingTaskId) {
         result = updateTask(editingTaskId, task);
-        if (result.ok) editingTaskId = null;
+        if (wasEditing) {
+            result = updateTask(editingTaskId, task);
+        }
     } else {
         result = addTask(task);
     }
@@ -297,6 +299,9 @@ function handleEventSubmit(event) {
     if (ok) {
         editingEventId = null;
         form.reset();
+
+        const submit = form.querySelector('[type="submit"]');
+        if(submit) submit.textContent = "Save event";
         announce("Event saved successfully.", "#event-form-message");
         refreshAll();
     } else {
@@ -510,7 +515,11 @@ function initialize() {
     setupSearch();
     setupSettings();
     setupImportExport();
+
+    const urlQuery = new URLSearchParams(window.location.search).get("q");
+    if (urlQuery && $("#task-search")) $("#task-search").value = urlQuery;
     refreshAll();
+
 }
 
 document.addEventListener("DOMContentLoaded", initialize);

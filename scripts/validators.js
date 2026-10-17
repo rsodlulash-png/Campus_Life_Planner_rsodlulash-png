@@ -16,7 +16,7 @@ export function validateTitle(value) {
     }
 
     if (!TITLE_PATTERN.test(title)) {
-        return "Title contains unsupported characters.";
+        return "Unsupported Charecters.";
     }
 
     return "";
@@ -53,7 +53,7 @@ export function validateDuration(value) {
         duration < 1 ||
         duration > MAX_DURATION
     ) {
-        return "Duration must be a whole number from 1 to 1440 minutes.";
+        return "Duration must be a whole number (1-1440minutes).";
     }
 
     return "";
@@ -106,14 +106,14 @@ export function validateRegexPattern(pattern) {
     ) {
         return {
             valid: false,
-            error: "This regex pattern is too risky. Simplify it."
+            error: "The pattern is too risky, Simplify it."
         };
     }
 
     try {
-        new RegExp(source, "iu");
+        new RegExp(source, "ui");
         return { valid: true, error: "" };
     } catch {
-        return { valid: false, error: "That regex pattern is not valid." };
+        return { valid:false, error:"That pattern is not valid." };
     }
 }

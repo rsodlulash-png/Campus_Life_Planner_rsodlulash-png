@@ -122,14 +122,15 @@ export function highlightText(text, regex) {
         return [{ text: value, highlighted: false }];
     }
 
-    // Do not accept global or sticky flags for splitting.
-    const safeRegex = new RegExp(regex.source, "i");
+    // Search globally so exec() keeps moving forward 
+    const flags = regex.flags.replace(/[gy]/g, "") + "g";
+    const safeRegex = new RegExp(regex.source, flags);
     const parts = [];
     let lastIndex = 0;
     let match;
 
     while ((match = safeRegex.exec(value)) !== null) {
-        if (match[0].length === 0) break;
+        if(match[0].length === 0) break;
 
         if (match.index > lastIndex) {
             parts.push({
@@ -146,5 +147,5 @@ export function highlightText(text, regex) {
         parts.push({ text: value.slice(lastIndex), highlighted: false });
     }
 
-    return parts.length ? parts : [{ text: value, highlighted: false }];
+    return parts.length ? parts : [{ text: value, highlighted: false}];
 }

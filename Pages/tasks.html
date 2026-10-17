@@ -31,7 +31,7 @@
 
     <main class="page-main">
         <section class="page-heading">
-            <p class="eyebrow">STAY ORGANIZED</p>
+            <p class="eyebrow">STAY ORGANIZED.</p>
             <h1>Tasks & Assignments</h1>
             <p>Break your academic goals into manageable steps and keep track of your deadlines.</p>
         </section>
@@ -39,7 +39,7 @@
         <section class="planner-panel" aria-labelledby="add-task-heading">
             <h2 id="add-task-heading">Add a task</h2>
 
-            <form id="task-form" class="planner-form">
+            <form id="task-form" class="planner-form" novalidate>
                 <label for="task-title">Task title</label>
                 <input id="task-title" name="title" type="text"
                        placeholder="e.g. Complete Python assignment" required maxlength="120">
@@ -51,7 +51,7 @@
                 <label for="task-date">Due date</label>
                 <input id="task-date" name="date" type="date" required>
 
-                <label for="task-duration">Estimated duration (minutes)</label>
+                <label for="task-duration">Estimated Duration in Minutes</label>
                 <input id="task-duration" name="duration" type="number"
                        min="1" max="1440" placeholder="e.g. 90" required>
 

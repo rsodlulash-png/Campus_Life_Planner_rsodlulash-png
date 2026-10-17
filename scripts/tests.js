@@ -4,7 +4,6 @@ import {
   validateDuration,
   validateTag
 } from "./validators.js";
-
 const demoForm = document.querySelector("#validation-demo-form");
 
 if (demoForm) {
@@ -14,28 +13,30 @@ if (demoForm) {
       error: document.querySelector("#title-error"),
       validate: validateTitle
     },
+
     date: {
       input: document.querySelector("#demo-date"),
       error: document.querySelector("#date-error"),
       validate: validateDate
     },
+
     duration: {
       input: document.querySelector("#demo-duration"),
-      error: document.querySelector("#duration-error"),
+      error:document.querySelector("#duration-error"),
       validate: validateDuration
     },
+
     tag: {
       input: document.querySelector("#demo-tag"),
-      error: document.querySelector("#tag-error"),
+      error: document.querySelector ("#tag-error"),
       validate: validateTag
     }
   };
-
   function validateField(field) {
     const message = field.validate(field.input.value);
     const errorMessage = typeof message === "string"
       ? message
-      : "";
+      :"";
 
     field.error.textContent = errorMessage;
     field.input.setAttribute(
@@ -53,7 +54,7 @@ if (demoForm) {
 
     field.input.addEventListener("input", () => {
       if (field.input.getAttribute("aria-invalid") === "true") {
-        validateField(field);
+        validateField(field)
       }
     });
   });
@@ -67,7 +68,7 @@ if (demoForm) {
     if (results.every(Boolean)) {
       output.textContent = "Success! All four fields passed validation.";
     } else {
-      output.textContent =
+      output.textContent = 
         "Please correct the highlighted fields before continuing.";
     }
   });
@@ -80,4 +81,5 @@ if (demoForm) {
 
     document.querySelector("#validation-output").textContent = "";
   });
+
 }

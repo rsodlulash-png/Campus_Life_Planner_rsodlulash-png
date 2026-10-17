@@ -1,4 +1,3 @@
-
 import { validatePlannerItem, MAX_TASKS } from "./validators.js";
 
 const KEYS = {
@@ -19,7 +18,7 @@ function readJSON(key, fallback) {
     }
 }
 
-function writeJSON(key, value) {
+function writeJSON(key, value)  {
     try {
         localStorage.setItem(key, JSON.stringify(value));
         return true;
@@ -28,11 +27,11 @@ function writeJSON(key, value) {
     }
 }
 
-function normalizeTask(task) {
+function normalizeTask(task)  {
     return {
         id: String(task.id || crypto.randomUUID()),
         title: String(task.title ?? "").trim(),
-        description: String(task.description ?? "").trim(),
+        description: String(task.description ?? ""),
         dueDate: String(task.dueDate ?? task.date ?? ""),
         duration: Number(task.duration),
         category: String(task.category ?? "Study"),
@@ -42,12 +41,12 @@ function normalizeTask(task) {
     };
 }
 
-function validTask(task) {
-    const normalized = normalizeTask(task);
+function validTask(task)  {
+    const normalized = normalized(task);
     return validatePlannerItem(normalized).valid;
 }
 
-export function getTasks() {
+export function getTasks()  {
     const tasks = readJSON(KEYS.tasks, []);
     if (!Array.isArray(tasks)) return [];
 
@@ -57,64 +56,59 @@ export function getTasks() {
         .map(normalizeTask);
 }
 
-export function saveTasks(tasks) {
-    if (!Array.isArray(tasks) || tasks.length > MAX_TASKS) {
-        return false;
-    }
-
+export function saveTasks(task)  {
+    if (!Array.isArray(tasks) || task.length > MAX_TASKS) return false;
     const normalized = tasks.map(normalizeTask);
-
     if (!normalized.every(validTask)) return false;
-
     return writeJSON(KEYS.tasks, normalized);
 }
 
-export function addTask(task) {
+export function addTask(task)  {
     const tasks = getTasks();
 
-    if (tasks.length >= MAX_TASKS) {
-        return { ok: false, message: `You can save up to ${MAX_TASKS} tasks.` };
+    if (tasks.length >= MAX_TASKS)  {
+        return { ok: false, message: 'You can save up to ${MAX_TASKS} tasks.'}
     }
 
     const normalized = normalizeTask(task);
-
     if (!validTask(normalized)) {
         return { ok: false, message: "Please check the task fields." };
     }
 
     tasks.unshift(normalized);
 
-    if (!saveTasks(tasks)) {
+    if (!saveTasks(tasks))  {
         return { ok: false, message: "Could not save this task in your browser." };
     }
 
     return { ok: true, task: normalized };
+
 }
 
-export function updateTask(id, changes) {
+export function updateTask(id, changes)  {
     const tasks = getTasks();
     const index = tasks.findIndex(task => task.id === String(id));
 
-    if (index === -1) {
+    if (index === -1)  {
         return { ok: false, message: "Task not found." };
     }
 
     const updated = normalizeTask({ ...tasks[index], ...changes, id });
 
-    if (!validTask(updated)) {
+    if (!validTask(updated))  {
         return { ok: false, message: "Please check the task fields." };
     }
 
     tasks[index] = updated;
-
-    if (!saveTasks(tasks)) {
+    if (!saveTasks(tasks))  {
         return { ok: false, message: "Could not save your changes." };
     }
 
     return { ok: true, task: updated };
+
 }
 
-export function deleteTask(id) {
+export function deleteTask(id)  {
     const tasks = getTasks();
     const remaining = tasks.filter(task => task.id !== String(id));
 
@@ -123,16 +117,15 @@ export function deleteTask(id) {
     return saveTasks(remaining);
 }
 
-export function getEvents() {
+export function getEvents()  {
     const events = readJSON(KEYS.events, []);
     return Array.isArray(events) ? events : [];
 }
-
-export function saveEvents(events) {
+export function saveEvents(events)  {
     return Array.isArray(events) && writeJSON(KEYS.events, events);
 }
 
-export function getSettings() {
+export function getSettings()  {
     return readJSON(KEYS.settings, {
         studyDuration: 50,
         breakDuration: 10,
@@ -142,7 +135,7 @@ export function getSettings() {
     });
 }
 
-export function saveSettings(settings) {
+export function saveSettings(settings)  {
     const studyDuration = Number(settings.studyDuration);
     const breakDuration = Number(settings.breakDuration);
     const targetMinutes = Number(settings.targetMinutes);
@@ -166,16 +159,16 @@ export function saveSettings(settings) {
     });
 }
 
-export function getTags() {
+export function getTags()  {
     const tags = readJSON(KEYS.tags, []);
     return Array.isArray(tags) ? tags.filter(tag => typeof tag === "string") : [];
 }
 
-export function saveTags(tags) {
+export function saveTags(tags)  {
     return Array.isArray(tags) && writeJSON(KEYS.tags, tags);
 }
 
-export function exportPlanner() {
+export function exportPlanner()  {
     return {
         version: 1,
         exportedAt: new Date().toISOString(),
@@ -184,17 +177,18 @@ export function exportPlanner() {
         settings: getSettings(),
         tags: getTags()
     };
+
 }
 
-export function importPlanner(data) {
+export function importPlanner(data)  {
     if (
         !data ||
         data.version !== 1 ||
-        !Array.isArray(data.tasks) ||
+        !Array.isArray (data.tasks) ||
         !Array.isArray(data.events) ||
         !data.settings ||
         !Array.isArray(data.tags)
-    ) {
+    )  {
         return { ok: false, message: "The file is not a supported planner backup." };
     }
 
@@ -202,10 +196,10 @@ export function importPlanner(data) {
         return { ok: false, message: "The backup contains invalid tasks or exceeds the task limit." };
     }
 
-    // Validate before writing anything.
+    // Valid before writing anything.
     const tasks = data.tasks.map(normalizeTask);
     const settings = data.settings;
-    const settingsOK =
+    const settingsOK = 
         Number.isInteger(Number(settings.studyDuration)) &&
         Number(settings.studyDuration) > 0 &&
         Number.isInteger(Number(settings.breakDuration)) &&
@@ -214,19 +208,20 @@ export function importPlanner(data) {
         Number(settings.targetMinutes) > 0;
 
     if (!settingsOK || !data.events.every(event =>
-        event && typeof event.title === "string" &&
+        event && typeof event .title === "string" &&
         typeof (event.dueDate ?? event.date) === "string"
     )) {
-        return { ok: false, message: "The backup contains invalid settings or events." };
+        return { ok: false, message: "The backup contains invalid settings or events."}
     }
 
-    const ok =
+    const ok = 
         saveTasks(tasks) &&
         saveEvents(data.events) &&
         saveSettings(settings) &&
         saveTags(data.tags);
 
-    return ok
+    return ok 
         ? { ok: true, message: "Planner backup imported successfully." }
-        : { ok: false, message: "Could not save the backup. Check browser storage." };
+        : { ok: false, message: "Could not save the backup. Check  browser storage." };
+
 }

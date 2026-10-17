@@ -38,7 +38,7 @@
         "tag": "Social",
         "type": "Event",
         "createdAt": "2026-10-08T12:00:00.000Z",
-        "updated": "2026-10-08T12:00;00.000Z"
+        "updatedAt": "2026-10-08T12:00;00.000Z"
     },
     {
         "id":"seed_0005",
@@ -67,7 +67,7 @@
         "duration": 240,
         "tag": "Campus",
         "type": "Event",
-        "createdAt": "2026-10-06T14:00;00.000Z",
+        "createdAt": "2026-10-06T14:00:00.000Z",
         "updatedAt": "2026-10-06T14:00:00.000Z"
 
     },
@@ -85,7 +85,7 @@
         "id": "seed_0009",
         "title": "Review CSS notes",
         "dueDate": "2026-10-15",
-        "duration": 75.5,
+        "duration": 75,
         "tag": "Academics",
         "type": "Task",
         "createdAt": "2026-10-10T16:00:00.000Z",
@@ -139,7 +139,7 @@
         "duration": 60,
         "tag": "Wellbeing",
         "type": "Event",
-        "createdAt": "2026-10-14T11:00:00.000-Z",
+        "createdAt": "2026-10-14T11:00:00.000Z",
         "updatedAt": "2026-10-14T11:00:00.000Z"
     },
     {
@@ -154,7 +154,7 @@
     },
     {
         "id": "seed_0016",
-        "title": " Ambassador meeting",
+        "title": "Ambassador meeting",
         "dueDate": "2026-11-18",
         "duration": 60,
         "tag": "Campus Duty",
@@ -168,8 +168,20 @@
         "dueDate": "2026-11-19",
         "duration": 15,
         "tag": "Wellness",
-        "type": " Event",
+        "type": "Event",
         "createdAt": "2026-10-10T19:00:00.000Z",
         "updatedAt": "2026-10-10T19:00:00.000Z"
+    },
+    {
+        "id": "seed_0018",
+        "title": "MC for Ikaze",
+        "dueDate": "2027-01-12",
+        "duration": 270,
+        "tag": "Host",
+        "type": "Event",
+        "createdAt": "2026-10-15T19:00:00.000Z",
+        "updatedAt": "2026-10-15T19:00:00.000Z"
+
     }
+
 ]

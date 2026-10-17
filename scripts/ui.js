@@ -131,7 +131,7 @@ export function renderDashboard(tasks, events, settings) {
         return !Number.isNaN(date.getTime()) && date >= today;
     });
 
-    const totalMinutes = tasks.reduce((sum, task) => sum + task.duration, 0);
+    const totalMinutes = pending.reduce((sum, task) => sum + task.duration, 0);
     const progress = tasks.length
         ? Math.round((completed.length / tasks.length) * 100)
         : 0;
@@ -180,9 +180,4 @@ export function renderDashboard(tasks, events, settings) {
             deadlines.append(item);
         }
     }
-
-    const target = Number(settings.targetMinutes) || 600;
-    setText("#dashboard-study-target",
-        `${Math.min(100, Math.round((totalMinutes / target) * 100))}% of study-time target`
-    );
 }

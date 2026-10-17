@@ -1,4 +1,4 @@
-# Witswatersrand Univeristy Campus Life Planner
+# Witswatersrand University Campus Life Planner
 
 **Theme: Conquer the Edge**
 
@@ -114,6 +114,26 @@ Provides a dedicated area for useful student information and resources.
 ### Settings
 
 Provides a section for application preferences.
+
+### Navigation and Keyboard Accessibility
+
+The planner can be used entirely with a keyboard.
+
+**Skip link:** Pressing `Tab` on page load reveals a "Skip to main content" link. Pressing `Enter` moves focus past the navigation to the main content.
+**Consistent navigation:** Every page has the same main navigation (Home, Dashboard, Tasks, Events & Timetable, Resources, Settings), and the current page is marked with `aria-current="page"`.
+**Standard keys:** `Tab` and `Shift + Tab` move between links, fields and buttons. `Enter` follows links and submits forms. `Space` activates buttons and checkboxes.
+**Visible focus:** The element that has keyboard focus is always outlined.
+**Form errors:** When a form is submitted with invalid data, an error message appears under each invalid field, the field is marked `aria-invalid`, and focus moves to the first invalid field.
+**Editing and deleting:** Choosing Edit moves focus to the title field. Choosing Delete asks for confirmation before anything is removed.
+
+### Import and Export
+
+Planner data can be backed up and restored as a JSON file.
+
+ **Export:** On the Settings page, choose **Export planner**. The browser downloads `seed.json`, which contains the saved tasks, events, settings and tags.
+**Import:** On the Settings page, choose a backup file with **Import planner**. The app asks for confirmation, because importing **replaces** the current saved planner data.
+ **Error handling:** A file that is not valid JSON is rejected with the message "The selected file is not valid JSON." A file with valid JSON but an invalid structure or invalid records is rejected with an explanatory message, and the existing data is left unchanged.
+ **Round trip:** Exporting and then importing the same file should restore the planner to the same state.
 
 ### Input Validation
 
@@ -258,18 +278,20 @@ Potential improvements include:
 
 A short project demonstration should show:
 
-1. The home page and overall design.
-2. Navigation through the dashboard and other sections.
-3. Task entry and validation.
-4. The automated validation test results.
-5. Keyboard navigation and accessibility features.
-6. The current limitations and possible future improvements.
+
 
 ## 15. Author and Project Information
 
 **Project:** Wits Campus Life Planner  
 **Institution:** African Leadership University, Rwanda 
 **Theme:** Conquer the Edge  
+1. The home page and overall design.
+2. Keyboard navigation: the skip link, tabbing through the navigation, and visible focus.
+3. Task entry and validation, including regex edge cases.
+4. The automated validation test results on `test.html`.
+5. Import and export of planner data, using the sample records in `seed.json`.
+6. Responsive layout at mobile, tablet and desktop widths.
+7. The current limitations and possible future improvements.
 **Project type:** Student productivity web application  
 **Status:** In development
 
@@ -279,7 +301,5 @@ The Wits Campus Life Planner aims to make academic organisation easier for Wits 
 
 By focusing on usability, validation, accessibility, and a student-centred design, the project aims to help students manage their responsibilities and make the most of their university experience.
 
-
-**Conquer the Edge — plan with purpose, stay organised, and make every opportunity count.**
 
 **Conquer the Edge — plan with purpose, stay organised, and make every opportunity count.**
