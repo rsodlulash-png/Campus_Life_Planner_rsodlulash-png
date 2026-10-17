@@ -181,13 +181,13 @@ python3 -m http.server 5500
 
 OR 
 
-Open `http://127.0.0.1:5500/index.html` in your browser.
+Open http://127.0.0.1:5500/index.html in your browser.
 
 ## 9. Testing
 
 Testing helps ensure that the application behaves correctly and handles invalid user input appropriately.
 
-`http://127.0.0.1:5500/test.html`
+http://127.0.0.1:5500/test.html
 
 ### Manual testing
 
@@ -206,12 +206,12 @@ The following areas should be checked:
 
 ### Automated validation tests
 
-The `scripts/tests.js` module is intended to test the validation functions in `scripts/validators.js`.
+The "scripts/tests.js` module is intended to test the validation functions in `scripts/validators.js`.
 
 To run the tests:
 
 1. Start the project with Live Server.
-2. Open `test.html`(`http://127.0.0.1:5500/test.html`) in the browser.
+2. Open `test.html`(http://127.0.0.1:5500/test.html) in the browser.
 3. Use the test controls provided by the page.
 4. Review the displayed test results.
 5. Fix any failing tests and run them again.
@@ -276,7 +276,7 @@ Potential improvements include:
 
 ## 14. Demonstration
 
-A short project demonstration should show: `https://drive.google.com/file/d/1M1yTqhXvXv6k8iXdWo6qD6bI0vZ1EA4N/view?usp=sharing`
+A short project demonstration should show: https://drive.google.com/file/d/1M1yTqhXvXv6k8iXdWo6qD6bI0vZ1EA4N/view?usp=sharing
 
 
 
