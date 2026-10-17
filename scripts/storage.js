@@ -41,8 +41,8 @@ function normalizeTask(task)  {
     };
 }
 
-function validTask(task)  {
-    const normalized = normalized(task);
+function validTask(task) {
+    const normalized = normalizeTask(task);
     return validatePlannerItem(normalized).valid;
 }
 
@@ -56,10 +56,17 @@ export function getTasks()  {
         .map(normalizeTask);
 }
 
-export function saveTasks(task)  {
-    if (!Array.isArray(tasks) || task.length > MAX_TASKS) return false;
+export function saveTasks(tasks) {
+    if (!Array.isArray(tasks) || tasks.length > MAX_TASKS) {
+        return false;
+    }
+
     const normalized = tasks.map(normalizeTask);
-    if (!normalized.every(validTask)) return false;
+
+    if (!normalized.every(validTask)) {
+        return false;
+    }
+
     return writeJSON(KEYS.tasks, normalized);
 }
 
@@ -67,7 +74,10 @@ export function addTask(task)  {
     const tasks = getTasks();
 
     if (tasks.length >= MAX_TASKS)  {
-        return { ok: false, message: 'You can save up to ${MAX_TASKS} tasks.'}
+        return {
+            ok: false,
+            message: `You can save up to ${MAX_TASKS} tasks.`
+        };
     }
 
     const normalized = normalizeTask(task);

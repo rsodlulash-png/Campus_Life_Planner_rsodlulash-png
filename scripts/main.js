@@ -170,19 +170,19 @@ function handleTaskSubmit(event) {
     const wasEditing = Boolean(editingTaskId);
     let result;
 
-    if (editingTaskId) {
-        result = updateTask(editingTaskId, task);
-        if (wasEditing) {
-            result = updateTask(editingTaskId, task);
-        }
+    if (wasEditing) {
+    result = updateTask(editingTaskId, task);
     } else {
-        result = addTask(task);
+    result = addTask(task);
     }
 
-    announce(result.ok
-        ? (editingTaskId ? "Task updated." : "Task saved successfully.")
+    announce(
+    result.ok
+        ? (wasEditing ? "Task updated." : "Task saved successfully.")
         : result.message
-    );
+);
+
+    
 
     // A successful update clears the edit state.
     if (result.ok) {
