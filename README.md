@@ -181,7 +181,7 @@ python3 -m http.server 5500
 
 OR 
 
-Open http://127.0.0.1:5500/index.html in your browser.
+Open https://rsodlulash-png.github.io/Campus_Life_Planner_rsodlulash-png/
 
 ## 9. Testing
 
