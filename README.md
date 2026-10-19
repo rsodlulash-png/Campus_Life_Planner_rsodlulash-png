@@ -187,7 +187,7 @@ Open https://rsodlulash-png.github.io/Campus_Life_Planner_rsodlulash-png/
 
 Testing helps ensure that the application behaves correctly and handles invalid user input appropriately.
 
-http://127.0.0.1:5500/test.html
+https://rsodlulash-png.github.io/Campus_Life_Planner_rsodlulash-png/test.html
 
 ### Manual testing
 
